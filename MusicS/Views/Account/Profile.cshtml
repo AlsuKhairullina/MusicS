@@ -1,0 +1,28 @@
+@model Models.User
+
+@{
+    ViewBag.Title = "Профиль";
+    Layout = "_Layout";
+}
+<h3 class="text-center p-2 m-2">Профиль</h3>
+
+<div class="container row justify-content-center" style="outline: 1px solid #000000">
+  <div>
+    <img style="padding:20px" width="250" height="250" type="image" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"></img>
+  </div>
+  <div class="m-3 p-3 d-flex flex-column">
+    @{
+      if (Model != null)
+      {
+        <p>Email: @Model.Email</p>
+        <p>Имя: @Model.Name</p>
+        <p>Уникальный ID: @Model.UserId</p>
+      }
+    }
+  </div>
+</div>
+<div class="m-3">
+  <form asp-action="Logout" asp-controller="Account" asp-antiforgery="true">
+    <button type="submit">Logout</button>
+  </form>
+</div>

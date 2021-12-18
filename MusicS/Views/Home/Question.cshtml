@@ -1,0 +1,30 @@
+@page
+
+@{
+    ViewBag.Title = "Есть вопрос?";
+    Layout = "_Layout";
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Чат с сервисом</title>
+</head>
+<body>
+<h2 class="text-center p-3">Форма обратной связи</h2>
+	<div style="outline: 1px solid #000;" class="justify-content-center">
+		<form class="text-center p-2" name="form" action="mail.php" method="post" id="form_message">
+        		<p> <div class="titles">Ваше имя</div> <input class="input" name="name" type="text"/> </p>
+           		 
+           		<p> <div class="titles">Электронная почта</div> <input class="input" name="email" type="text"/> </p>
+           		 
+           		<p> <div class="titles">Тема сообщения</div> <input class="input" name="subjects" type="text"/> </p>
+           		 
+           		<p> <div class="titles">Текст сообщения:</div><textarea name="message" cols="50" rows="10" /></textarea></p>
+           		<p><input id="submit" value="Отправить" type="submit" /></p>
+           	</form>
+	</div>
+</body>
+</html>

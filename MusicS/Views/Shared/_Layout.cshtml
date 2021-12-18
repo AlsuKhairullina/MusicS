@@ -1,0 +1,64 @@
+﻿@{}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - MusicS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
+</head>
+<body style="background-color: #E5E5E5">
+
+<header class="p-3 bg-lighttext-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/Home" class="nav-link px-2 text-dark">Музыкальный</a></li>
+        <li class="nav-item dropdown text-dark">
+          <a class="text-dark nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Категории
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/Categories/Guitars">Гитары</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/Categories/Keyboards">Клавишные</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/Categories/Аccessories">Аксессуары</a>
+          </div>
+        </li>
+        <li><a href="/Home/Question" class="nav-link px-2 text-dark">Есть вопрос?</a></li>
+        <li><a href="/Home/Contacts" class="nav-link px-2 text-dark">Контакты</a></li>
+        <li><a href="/Product/AddProduct" class="nav-link px-2 text-dark">Добавить товар</a></li>
+        
+      </ul>
+      <div class="ml-auto mr-5">
+        <button onclick="window.location.href='/Account/Login'" type="button" class="btn btn-outline-dark me-2">Личный кабинет</button>
+        <button onclick="window.location.href='/Account/Registration'" type="button" class="btn btn-warning">Регистрация</button>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2021 - MusicS - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
+</footer>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

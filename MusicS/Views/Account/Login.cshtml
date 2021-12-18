@@ -1,0 +1,31 @@
+@model Models.User
+
+@{
+    ViewBag.Title = "Войти";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <title></title>
+</head>
+<body>
+<form asp-action="Login" asp-controller="Account" asp-antiforgery="true">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email </label>
+        <input type="email" asp-for="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Пароль</label>
+        <input type="password" asp-for="Password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+    </div>
+    <button onclick="window.location.href='/Account/Profile'" type="submit" class="btn btn-primary">Зарегестрироваться</button>
+</form>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
